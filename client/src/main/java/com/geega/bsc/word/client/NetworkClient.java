@@ -1,5 +1,7 @@
 package com.geega.bsc.word.client;
 
+import com.geega.bsc.word.client.message.SyncSendRequest;
+import com.geega.bsc.word.client.message.SyncSendResponse;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
@@ -13,6 +15,7 @@ import java.util.Set;
 public class NetworkClient {
 
     private final Selector selector;
+
     private final SocketChannel socketChannel;
 
     /**
@@ -66,6 +69,10 @@ public class NetworkClient {
 
     public boolean isConnected() {
         return connectionState == 1;
+    }
+
+    public SyncSendResponse check(SyncSendRequest syncSendRequest) {
+        return null;
     }
 
     class Worker implements Runnable {
